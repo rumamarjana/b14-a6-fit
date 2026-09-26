@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
-import {workId} from '@/types/work.type'
+import {Iwork} from '@/types/work.type'
 import { Clock, Flame, Star } from 'lucide-react';
-import Link from "next/link";
+import Link from 'next/link'
 
-export const WorkoutCard = ({ workout }: { workout: workId }) => {
+export const WorkoutCard = ({ workout }: { workout: Iwork }) => {
   return (
-  <Link href={`/`} className="block w-[394px] h-[368px] rounded-3xl overflow-hidden" >
+  <Link href={`/workout/${workout.id}`} className="block w-[394px] h-[368px] rounded-3xl overflow-hidden" >
     <div className="w-[394px] h-[368px] bg-[#121418] border border-gray-800 rounded-3xl overflow-hidden shadow-xl text-white font-sans flex flex-col justify-between">
 
       <div className="h-52 w-full overflow-hidden relative">

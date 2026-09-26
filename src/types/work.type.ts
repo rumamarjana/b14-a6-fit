@@ -1,4 +1,4 @@
- export interface workId{
+ export interface Iwork{
     id: number;
     name: string; 
     image: string;

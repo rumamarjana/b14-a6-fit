@@ -1,5 +1,6 @@
 import React from 'react';
 import WorkoutCard from '@/components/shared/WorkoutCard';
+import {Iwork} from '@/types/work.type'
 
 
 const workOutPage = async () => {
@@ -26,7 +27,7 @@ const WorkOutPage = async () => {
                     <p className="text-sm text-gray-400 max-w-md mt-4 leading-6">Twelve lifts covering every major muscle group.</p>
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w">
-                    {workData.map((workout: workId, ind: number) => {
+                    {workData.map((workout: Iwork, ind: number) => {
                         return <WorkoutCard key={ind} workout={workout} />;
                     })}
                 </div>
