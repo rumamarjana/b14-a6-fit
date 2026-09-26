@@ -2,10 +2,11 @@ import React from 'react';
 import Link from 'next/link'
 import Image from 'next/image';
 import Logo from '@/assets/logo.png'
+
 const Navbar = () => {
 
     const links = <>
-        <li><Link href="/" className="rounded-full px-4 py-2 text-sm text-gray-400
+        <li><Link href="/workout" className="rounded-full px-4 py-2 text-sm text-gray-400
             hover:bg-[#182510] hover:text-lime-400
             transition-all duration-200">
             Workouts
@@ -33,12 +34,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link href="/" className="btn btn-ghost text-xl">
-                   <Image
-                       src={Logo}
-                       width={40}
-                       height={50}
-                      />
-                      FITLOG
+                    <Image
+                        src={Logo}
+                        width={40}
+                        height={50}
+                    />
+                    FITLOG
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -47,19 +48,25 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-5">
-                <button className="group flex items-center gap-2 text-sm text-gray-300">
+                <Link
+                    href="/plan"
+                    className="group flex items-center gap-2 text-sm text-gray-300"
+                >
                     Plan
                     <div className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-700 text-xs text-gray-400 transition-colors group-hover:border-[#baff00] group-hover:bg-[#baff00] group-hover:text-black">
                         0
                     </div>
-                </button>
+                </Link>
 
-                <button className="group flex items-center gap-2 text-sm text-gray-300">
+                <Link
+                    href="/saved"
+                    className="group flex items-center gap-2 text-sm text-gray-300"
+                >
                     Saved
                     <div className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-700 text-xs text-gray-400 transition-colors group-hover:border-[#baff00] group-hover:bg-[#baff00] group-hover:text-black">
                         0
                     </div>
-                </button>
+                </Link>
             </div>
         </div>
     );
