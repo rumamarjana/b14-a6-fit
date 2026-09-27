@@ -11,6 +11,7 @@ const Banner = () => {
                         src={bannerImg}
                         width={400}
                         height={500}
+                        alt='banner'
                     />
                     <div className="max-w-xl">
                         <p className="text-[10px] font-bold uppercase tracking-widest text-[#b6ff00] mb-4">

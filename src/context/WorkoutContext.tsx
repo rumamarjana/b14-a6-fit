@@ -1,24 +1,29 @@
-import React from 'react';
-import {Iwork} from '@/types/work.type'
-import React, { createContext, ReactNode, useState } from "react";
+"use client";
 
 
-const WorkoutContext = createContext({null});
+import React, { createContext, useState,ReactNode } from 'react';
+
+   export const WorkoutContext = createContext({});
 
 
 const WorkoutProvider = ({children}:{ children: ReactNode }) => {
 
-    const [plan, setPlan] = useState<Iwork[]>([]);
-    const [save, setSave] = useState<Iwork[]>([]);
+    const [plan, setPlan] = useState([]);
+    const [save, setSave] = useState([]);
 
-
+    const totalExercises = plan.length;
+     const totalMinutes = plan.reduce((acc, item) => acc + (Number(item.duration) || 0), 0);
+    const totalCalories = plan.reduce((acc, item) => acc + (Number(item.calories) || 0), 0);
 
 
      const sharedData = {
           plan,
         setPlan,
            save,
-        setSave
+        setSave,
+         totalExercises,
+          totalMinutes,
+         totalCalories,
   };
 
     return (

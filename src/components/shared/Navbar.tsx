@@ -2,6 +2,10 @@ import React from 'react';
 import Link from 'next/link'
 import Image from 'next/image';
 import Logo from '@/assets/logo.png'
+import PlanCount from '../workCount/planCount';
+import SaveCount from '../workCount/saveCount';
+
+import { Plane } from 'lucide-react';
 
 const Navbar = () => {
 
@@ -11,12 +15,12 @@ const Navbar = () => {
             transition-all duration-200">
             Workouts
         </Link></li>
-        <li><Link href="/" className="rounded-full px-4 py-2 text-sm text-gray-400
+        <li><Link href="/plan-listed" className="rounded-full px-4 py-2 text-sm text-gray-400
             hover:bg-[#182510] hover:text-lime-400
             transition-all duration-200" >
             My Plan
         </Link></li>
-
+     
     </>
 
 
@@ -38,6 +42,7 @@ const Navbar = () => {
                         src={Logo}
                         width={40}
                         height={50}
+                        alt='logo'
                     />
                     FITLOG
                 </Link>
@@ -48,25 +53,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-5">
-                <Link
-                    href="/plan"
-                    className="group flex items-center gap-2 text-sm text-gray-300"
-                >
-                    Plan
-                    <div className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-700 text-xs text-gray-400 transition-colors group-hover:border-[#baff00] group-hover:bg-[#baff00] group-hover:text-black">
-                        0
-                    </div>
-                </Link>
-
-                <Link
-                    href="/saved"
-                    className="group flex items-center gap-2 text-sm text-gray-300"
-                >
-                    Saved
-                    <div className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-700 text-xs text-gray-400 transition-colors group-hover:border-[#baff00] group-hover:bg-[#baff00] group-hover:text-black">
-                        0
-                    </div>
-                </Link>
+                <PlanCount />
+               <SaveCount />
             </div>
         </div>
     );
