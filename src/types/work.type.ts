@@ -1,6 +1,6 @@
  export interface Iwork{
-    id: number;
-    name: string; 
+   id: number;
+    name: string;
     image: string;
     muscleGroups: string[];
     equipment: string;
