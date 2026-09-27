@@ -12,7 +12,7 @@ const PlanPage = () => {
 
     const { plan, save, totalExercises, totalMinutes, totalCalories } = useContext(WorkoutContext);
 
-    const [sortBy, setSortBy] = useState<"duration" | "caloriesBurned">("duration");
+    const [sortBy, setSortBy] = useState<"rating" |"duration" | "caloriesBurned">("duration");
 
 
     const sortWorkout = (workout: Iwork[]) => {
@@ -22,6 +22,9 @@ const PlanPage = () => {
             sortedWorkout.sort((a, b) => b.duration - a.duration);
         } else if (sortBy === "caloriesBurned") {
             sortedWorkout.sort((a, b) => b.caloriesBurned - a.caloriesBurned);
+        }
+        else if (sortBy === "rating") {
+            sortedWorkout.sort((a, b) => b.rating - a.rating);
         }
         return sortedWorkout;
     }
@@ -141,12 +144,13 @@ const PlanPage = () => {
                             <select
                                 value={sortBy}
                                 onChange={(e) =>
-                                    setSortBy(e.target.value as "duration" | "caloriesBurned")
+                                    setSortBy(e.target.value as "duration" | "caloriesBurned" | "rating")
                                 } defaultValue="Pick a Runtime"
                                 className="select select-success " >
                                 <option disabled={true}>Sort By</option>
                                 <option value={"duration"}>duration</option>
                                 <option value={"caloriesBurned"}>caloriesBurned</option>
+                                <option value={"rating"}>rating</option>
 
                             </select>
                         </div>
