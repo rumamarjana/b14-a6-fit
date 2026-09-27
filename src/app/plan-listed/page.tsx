@@ -65,8 +65,22 @@ const PlanPage = () => {
 
                 </div>
 
-                <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-[#0a0c10] font-sans gap-4 select-none ">
-                    <div className='w-full grid grid-cols-2 justify-between mb-4'>
+                <div className="w-full flex flex-col  sm:flex-row sm:items-center justify-between p-4 bg-[#0a0c10] font-sans gap-4 select-none relative">
+                    <div className="flex items-center gap-2 mx-8 absolute right-30 top-10">
+                            <select
+                                value={sortBy}
+                                onChange={(e) =>
+                                    setSortBy(e.target.value as "duration" | "caloriesBurned" | "rating")
+                                } defaultValue="Pick a Runtime"
+                                className="select select-success " >
+                                <option disabled={true}>Sort By</option>
+                                <option value={"duration"}>duration</option>
+                                <option value={"caloriesBurned"}>caloriesBurned</option>
+                                <option value={"rating"}>caloriesBurned</option>
+
+                            </select>
+                        </div>
+                    <div className='w-full grid grid-cols-1 justify-between mb-4'>
                         <div className='w-full flex items-center justify-between mb-4'>
                             <div className="tabs tabs-lift py-8  w-full">
                                 <input type="radio" name="my_tabs_3" className="tab" aria-label="Today’s Plan" />
@@ -140,20 +154,7 @@ const PlanPage = () => {
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-2 mx-8">
-                            <select
-                                value={sortBy}
-                                onChange={(e) =>
-                                    setSortBy(e.target.value as "duration" | "caloriesBurned" | "rating")
-                                } defaultValue="Pick a Runtime"
-                                className="select select-success " >
-                                <option disabled={true}>Sort By</option>
-                                <option value={"duration"}>duration</option>
-                                <option value={"caloriesBurned"}>caloriesBurned</option>
-                                <option value={"rating"}>rating</option>
-
-                            </select>
-                        </div>
+                        
                     </div>
 
 
